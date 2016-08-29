@@ -1,0 +1,22 @@
+---
+title: "Kardex"
+output: html_document
+---
+###Calificaciones
+**Otoño 2015**
+ 
+ * Programación Actuarial I: 8
+ * Introducción a la Profesión Actuarial: 9
+ * Conceptos de Cálculo: 10
+ * Matemáticas Básicas: 9
+ * Probelemas de Matemáticas Básicas: 9
+ * DHPC: cal.10
+ 
+ **Primavera 2016**
+ 
+ * Programación Actuarial II: 9
+ * Teoria del interes I: 7
+ * Formacion Humana y Social: 9
+ * Calculo diferencial: 7
+ * Geometria analitica: 9
+ * Teoria de ecuaciones: 8
