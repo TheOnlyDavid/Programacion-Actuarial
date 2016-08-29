@@ -5,16 +5,16 @@ output: html_document
 ###Calificaciones
 **Otoño 2015**
  
- * Programación Actuarial I: 8
- * Introducción a la Profesión Actuarial: 9
- * Conceptos de Cálculo: 10
- * Matemáticas Básicas: 9
- * Probelemas de Matemáticas Básicas: 9
- * DHPC: cal.10
+ * Programacion Actuarial I: 8
+ * Introduccion a la Profesion Actuarial: 9
+ * Conceptos de Calculo: 10
+ * Matematicas Basicas: 9
+ * Problemas de Matematicas Basicas: 9
+ * DHPC: 10
  
  **Primavera 2016**
  
- * Programación Actuarial II: 9
+ * Programacion Actuarial II: 9
  * Teoria del interes I: 7
  * Formacion Humana y Social: 9
  * Calculo diferencial: 7
