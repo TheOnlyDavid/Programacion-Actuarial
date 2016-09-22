@@ -1,30 +1,34 @@
-id = vector("character", length = 3L)
-mediacontaminante = function(directorio, contaminante, id=1:332){
+mediacontaminante = function(directorio="C:/Users/Aaron/Documents/GitHub/ProgramacionActuarial3/specdata", contaminante, id=1:332){
+  setwd(directorio)
+  res = vector("numeric")
   #Poniendo nombres
-  id = abs(id)
-  if(id<10){
-    id = paste("00",id,sep="")
-  }
-  else{
-    if(id<100){
-      id = paste("0",id,sep="")
+  for(i in id){ 
+    i = abs(i)
+    if(i<10){
+      i = paste("00",i,sep="")
     }
     else{
-      id = paste(id,sep="")
+      if(i<100){
+        i = paste("0",i,sep="")
+      }
+      else{
+        i = paste(i,sep="")
+      }
     }
-  }
-  if(id>332){
-    id = "001"
-  }
-  #Directorio y llamar tabla
-  setwd("C:/Users/Aaron/Documents/GitHub/ProgramacionActuarial3/specdata") #Quitar y poner Directorio
-  datos = read.csv(paste(id,".csv",sep=""), header = T)
+    if(i>332){
+      i = "001"
+    }
+    datos = read.csv(paste(i,".csv",sep=""), header = T)
   if(contaminante == "sulfate"){
     a = mean(datos$sulfate, trim = 0 ,na.rm = T)
-    print(a)
+    res = c(res,a)
   }
   if(contaminante == "nitrate"){
     b = mean(datos$nitrate, trim = 0 ,na.rm = T)
-    print(b)
+    res = c(res,b)
   }
+  
+  }
+  DF = data.frame(id, "media" = res)
+  print(DF)
 }

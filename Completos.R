@@ -1,11 +1,9 @@
-completos = function(directorio, id){
+completos = function(directorio = "C:/Users/Aaron/Documents/GitHub/ProgramacionActuarial3/specdata", id){
   #Directorio y DF
-  setwd("C:/Users/Aaron/Documents/GitHub/ProgramacionActuarial3/specdata") #Quitar y poner Directorio
-  v = data.frame("id" = numeric(0), "nobs" = numeric(0))
-  a = id[1]
+  setwd(directorio) #Quitar y poner Directorio
+  res = vector("numeric")
   for(i in id){ 
     i = abs(i)
-    b = (i - a)+1
     if(i<10){
       i = paste("00",i,sep="")
     }
@@ -21,8 +19,12 @@ completos = function(directorio, id){
       i = "001"
     }
   datos = read.csv(paste(i,".csv",sep=""), header = T)
-  nobsdata = sum(complete.cases(datos$sulfate))
-  v[b,] = c(i,nobsdata)
+    nobsD = cbind(datos[, 2:3])
+    comp = complete.cases(nobsD)
+    casos = nobsD[comp, ]
+    contar = nrow(casos)
+      res = c(res, contar)
   }
-  print(v)
+  DF<- data.frame(id, "nobs" = res)
+  print(DF)
 }
