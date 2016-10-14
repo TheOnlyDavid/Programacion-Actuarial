@@ -35,4 +35,5 @@ mejor = function(estado, resultado) {
         
         x = sub4[1,2]
         as.character(x)
+        
 } 

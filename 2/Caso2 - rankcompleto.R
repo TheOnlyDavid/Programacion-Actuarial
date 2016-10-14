@@ -38,4 +38,5 @@ rankingcompleto = function(resultado = "ataque", num = "mejor") {
         }
     colnames(final) = c("Hospital", "Estado")
     final
+    
 }

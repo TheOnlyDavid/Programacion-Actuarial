@@ -33,4 +33,5 @@ rankhospital = function(estado="TX", resultado = "ataque", num = "mejor") {
                 num = length(sub3[,1])
             }
             as.vector(sortdat[num,1])
+            
 } 
