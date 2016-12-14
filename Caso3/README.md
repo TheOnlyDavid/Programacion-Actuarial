@@ -77,7 +77,10 @@ Hay que sacar el promedio de cada variable (columna), para cada actividad y
 sujeto, se puede hacer fácil en un línea.
 
 ```r
-MediasFinal = aggregate(Final[, 3:68], list(Final$Acción), mean)
+library(dplyr) #debe estar instalado antes
+prom_final <- Final %>% group_by(Sujeto,Acción) %>% summarise_each(funs(mean))
+write.csv(prom_final,"Promedio de acciones.csv")
+write.csv(MediasFinal, "Medias acciones.csv")
 ```
 
 ####Parte 6 (Opcional)
@@ -86,6 +89,3 @@ Creamos la base de datos por separado en un archivo ".csv"
 ```r
 write.csv(Final, "Datos Ordenados.csv")
 ```
-
-
-

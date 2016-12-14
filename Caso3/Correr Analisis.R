@@ -10,8 +10,8 @@ JuntarSub = rbind(read.table("./Caso3/train/subject_train.txt"),
 Titulo = read.table("./Caso3/features.txt")
 
 #Parte2) Solo media y desviacion std
-        colnames(Juntarx) <- Titulo$V2
-Mediastd = grepl('-(mean|std)\\(', Titulo$V2)
+        colnames(Juntarx) <- Titulo[,2]
+Mediastd = grepl('-(mean|std)\\(', Titulo[,2])
 Juntarx = Juntarx[Mediastd]
 
 #Parte3) Usar nombre de actividad
@@ -37,7 +37,9 @@ Acción = Juntary
 Final = cbind(Sujeto, Acción, Juntarx)
 
 #Parte5)
-
-MediasFinal = aggregate(Final[, 3:68], list(Final$Acción), mean)
+library(dplyr) #debe estar instalado antes
+prom_final <- Final %>% group_by(Sujeto,Acción) %>% summarise_each(funs(mean))
+write.csv(prom_final,"Promedio de acciones.csv")
+write.csv(MediasFinal, "Medias acciones.csv")
 
 write.csv(Final, "Datos Ordenados.csv")
